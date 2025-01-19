@@ -1,33 +1,35 @@
 {
-  "name": "gitTracker",
+  "name": "github-productivity-tracker",
   "displayName": "GitHub Productivity Tracker",
-  "description": "Trackes your progress every 30 min and pushes it to github",
+  "description": "A VS Code extension to track productivity by committing changes to GitHub every 30 minutes.",
   "version": "0.0.1",
+  "publisher": "your-publisher-name",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "gitTracker.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "gitTracker.startTracking",
+        "title": "Create GitHub Repo and Start Tracking"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "node ./test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "eslint": "^9.16.0",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "eslint": "^7.19.0",
+    "vscode-test": "^1.4.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.0.12",
+    "dotenv": "^10.0.0",
+    "simple-git": "^3.27.0"
   }
 }
