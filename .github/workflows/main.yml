@@ -32,9 +32,3 @@ jobs:
     - name: Push Docker image
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/vscode_ext
-
-dependency-submission:
-
-runs-on: ubuntu-latest
-permissions:
-  contents: write
